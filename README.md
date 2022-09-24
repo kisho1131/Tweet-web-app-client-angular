@@ -1,6 +1,13 @@
 # Tweet-web-app-client-angular
 
-Frontend for Tweet application which uses 
+Frontend for Tweet application which uses Spring Boot as Backend Service ( https://github.com/kisho1131/Tweet-web-app-server-spring-boot )
+
+Tweet App is SPA (Single Page App) for registered users to post new tweets, reply to tweets, like/unlike tweets.
+Guest users cannot see any tweets.
+The core modules of tweet app are:
+1. User registration and login
+2. Post tweet
+3. View users/handles and their respective tweets
 
 ![image](https://user-images.githubusercontent.com/63787026/192088468-d7d11746-4d7b-4111-a051-62f0fbd61863.png)
 <br>
