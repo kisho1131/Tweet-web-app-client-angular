@@ -1,0 +1,240 @@
+<!-- <h1>Register!</h1> -->
+<!-- <div class="container">
+  <div *ngIf="errorBool" class="alert alert-danger">
+    Either Email or Login ID is already taken. Please provide another Email and
+    Login ID.
+  </div>
+  <form (ngSubmit)="!registerForm.invalid && register()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        placeholder="Enter First Name"
+        required="required"
+        [(ngModel)]="firstName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        placeholder="Enter Last Name"
+        required="required"
+        [(ngModel)]="lastName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter Email"
+        required="required"
+        [(ngModel)]="Email"
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+    </div>
+    <div class="form-group">
+      <label for="loginId">Login ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="loginId"
+        name="loginId"
+        placeholder="Enter Login ID"
+        required="required"
+        [(ngModel)]="loginId"
+      />
+    </div>
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="Password"
+        name="Password"
+        placeholder="Enter Password"
+        required="required"
+        [(ngModel)]="password"
+        #password1="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="Password">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="ConfirmPassword"
+        name="ConfirmPassword"
+        placeholder="Enter Password Again"
+        required="required"
+        [(ngModel)]="confirmPassword"
+        #confirmPassword1="ngModel"
+        pattern="{{ password }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="contactNumber"
+        name="contactNumber"
+        placeholder="Enter Contact Number"
+        required="required"
+        [(ngModel)]="contactNumber"
+        pattern="^[0-9]{10}$"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div> -->
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-70">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <div *ngIf="errorBool" class="alert alert-danger">
+              Either Email or Login ID is already taken. Please provide another
+              Email and Login ID.
+            </div>
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form
+              (ngSubmit)="!registerForm.invalid && register()"
+              #registerForm="ngForm"
+            >
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="firstName"
+                      class="form-control form-control-lg"
+                      required="required"
+                      [(ngModel)]="firstName"
+                      name="firstName"
+                    />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="lastName"
+                      class="form-control form-control-lg"
+                      required="required"
+                      [(ngModel)]="lastName"
+                      name="lastName"
+                    />
+                    <label class="form-label" for="lastName">Last Name</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="loginId"
+                      class="form-control form-control-lg"
+                      required="required"
+                      [(ngModel)]="loginId"
+                      name="loginId"
+                    />
+                    <label class="form-label" for="loginId">Username</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control form-control-lg"
+                      required="required"
+                      [(ngModel)]="Email"
+                      pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                      name="email"
+                    />
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="contactNumber"
+                      class="form-control form-control-lg"
+                      required="required"
+                      name="contactNumber"
+                      [(ngModel)]="contactNumber"
+                      pattern="^[0-9]{10}$"
+                    />
+                    <label class="form-label" for="contactNumber"
+                      >Contact Number</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="password"
+                      id="Password"
+                      class="form-control form-control-lg"
+                      name="Password"
+                      required="required"
+                      [(ngModel)]="password"
+                      #password1="ngModel"
+                    />
+                    <label class="form-label" for="Password">Password</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input
+                      type="password"
+                      id="ConfirmPassword"
+                      class="form-control form-control-lg"
+                      name="ConfirmPassword"
+                      required="required"
+                      [(ngModel)]="confirmPassword"
+                      #confirmPassword1="ngModel"
+                      pattern="{{ password }}"
+                    />
+                    <label class="form-label" for="Password"
+                      >Confirm Password</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-2">
+                <button class="btn btn-primary" type="submit">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

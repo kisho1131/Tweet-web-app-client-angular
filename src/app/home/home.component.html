@@ -1,0 +1,177 @@
+<!-- <div class="container">
+    <div class="form-group">
+        <textarea class="form-control" rows="3" maxlength="144" placeholder="What's going on your mind?"
+            [(ngModel)]="tweet"></textarea>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" rows="2" maxlength="50" placeholder="Add tags (Optional)"
+            [(ngModel)]="tags"></textarea>
+    </div>
+
+    <div *ngIf=tweetInValid class="alert alert-warning">{{messageForTweet}}
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)=postTweet()>Post Tweet</button>
+    </div>
+</div>
+
+<h1>My Tweets</h1>
+
+<div class="container tweet">
+    <div *ngIf='tweetsToShow' class="alert alert-warning">
+        {{tweetsToShow}}
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tweet of tweets">
+            <h5 class="semibold ellipsis nm">@{{tweet.loginId}} </h5>
+            <p class="nm">{{tweet.tweets}}</p>
+            <div class="button">
+                <button (click)="deleteTweet(tweet.id)"><i class="material-icons">delete</i></button>
+                <button (click)="updateTweet(tweet.id)"><i class="material-icons">edit</i></button>
+                <button (click)="updateLikes(tweet.id)"><i class="material-icons">thumb_up</i><small
+                        class="badge badge-primary badge-pill" *ngFor="let l of likes">
+                        <ng-container *ngIf="(tweet.id === l.id) && (l.likes!=0)">{{l.likes}}</ng-container>
+                    </small></button>
+                <button (click)="checkComments(tweet.id)"><i class="material-icons">comment</i></button>
+            </div>
+            <small class="text-muted">{{tweet.date | date : 'dd MMM yyyy, h:mm a'}}</small>
+        </li>
+    </ul>
+</div> -->
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="container">
+  <div class="col-lg-8">
+    <div class="panel profile-cover">
+      <div class="profile-cover__img">
+        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />
+        <h2 class="h3">Welcome @{{ name }}</h2>
+      </div>
+      <div class="profile-cover__action bg--img" data-overlay="0.3">
+        <button class="btn btn-rounded btn-info">
+          <i class="fa fa-plus"></i>
+          <span></span>
+        </button>
+        <button class="btn btn-rounded btn-info">
+          <i class="fa fa-comment"></i>
+          <span></span>
+        </button>
+      </div>
+      <div class="profile-cover__info">
+        <ul class="nav">
+          <li><strong>26</strong>Projects</li>
+          <li><strong>33</strong>Followers</li>
+          <li><strong>136</strong>Following</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@{{ name }}'s Feed</h3>
+      </div>
+      <div class="panel-content panel-activity">
+        <div class="panel-activity__status">
+          <textarea
+            rows="3"
+            maxlength="144"
+            name="user_activity"
+            placeholder="Share what you've been up to..."
+            class="form-control"
+            [(ngModel)]="tweet"
+          ></textarea>
+          <div class="actions">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn-link"
+                title=""
+                data-toggle="tooltip"
+                data-original-title="Post an Image"
+              >
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </button>
+            </div>
+            <button
+              (click)="postTweet()"
+              type="submit"
+              class="btn btn-sm btn-rounded btn-info"
+            >
+              Post
+            </button>
+          </div>
+          <div *ngIf="tweetInValid" class="alert alert-warning">
+            {{ messageForTweet }}
+          </div>
+        </div>
+
+        <!-- New Tweet Section  -->
+        <ul class="panel-activity__list">
+          <li *ngFor="let tweet of tweets">
+            <i class="activity__list__icon fa fa-question-circle-o"></i>
+            <div class="activity__list__header">
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                alt=""
+              />
+              <a>@{{ tweet.loginId }}</a>
+            </div>
+            <div class="activity__list__body entry-content">
+              <p>
+                <strong>{{ tweet.tweets }}</strong>
+              </p>
+            </div>
+            <div class="activity__list__footer text-center">
+              <button
+                type="button"
+                class="btn-link"
+                data-toggle="tooltip"
+                (click)="deleteTweet(tweet.id)"
+              >
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                style="margin-left: 5px"
+                class="btn-link btn-primary btn-sm"
+                (click)="updateTweet(tweet.id)"
+              >
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                data-toggle="tooltip"
+                class="btn-link"
+                (click)="updateLikes(tweet.id)"
+              >
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <small
+                  class="badge badge-primary badge-pill"
+                  *ngFor="let l of likes"
+                >
+                  <ng-container *ngIf="tweet.id === l.id && l.likes != 0">{{
+                    l.likes
+                  }}</ng-container>
+                </small>
+              </button>
+              <button
+                type="button"
+                class="btn-link"
+                data-toggle="tooltip"
+                (click)="checkComments(tweet.id)"
+              >
+                <i class="fa fa-comments" aria-hidden="true"></i>
+              </button>
+              <span>
+                <i class="fa fa-clock"></i
+                >{{ tweet.date | date: "dd MMM yyyy, h:mm a" }}</span
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

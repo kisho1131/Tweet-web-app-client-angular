@@ -1,0 +1,35 @@
+<!-- <h1>Update Tweet</h1>
+
+
+<div class="container">
+    <div class="form-group">
+        <textarea class="form-control" rows="3" maxlength="194" placeholder="What's going on your mind?"
+            [(ngModel)]="tweet.tweets"></textarea>
+    </div>
+    <div *ngIf=tweetInValid class="alert alert-warning">{{tweetInValid}}
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)=updateTweet()>Update Tweet</button>
+    </div>
+</div> -->
+
+<div class="card">
+  <div class="card-header"><h3>Update Your Tweet</h3></div>
+  <div class="card-body">
+    <div *ngIf="tweetInValid" class="alert alert-warning">
+      {{ tweetInValid }}
+    </div>
+    <div class="form-outline">
+      <textarea
+        [(ngModel)]="tweet.tweets"
+        rows="3"
+        maxlength="194"
+        class="form-control"
+        id="textAreaExample"
+        rows="4"
+      ></textarea>
+    </div>
+    <br />
+    <a class="btn btn-primary btn-sm" (click)="updateTweet()">Update</a>
+  </div>
+</div>

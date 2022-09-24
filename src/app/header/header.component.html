@@ -1,0 +1,125 @@
+<header>
+  <!-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div><a href="" class="navbar-brand">TweetApp</a></div>
+        <ul class="navbar-nav">
+            <li><a *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/tweets/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/tweets/register" class="nav-link">Register</a></li>
+            <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/tweets/{{this.authenticationService.getUser()}}/home" class="nav-link">Home</a></li>
+            <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/tweets/{{this.authenticationService.getUser()}}/all" class="nav-link">Tweets</a></li>
+            <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/tweets/{{this.authenticationService.getUser()}}/users/all" class="nav-link">All Users</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="authenticationService.isUserLoggedIn()" routerLink="/tweets/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav> -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="15"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/tweets/login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li> -->
+          <li class="nav-item">
+            <a
+              *ngIf="!authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/login"
+              class="nav-link"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              *ngIf="!authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/register"
+              class="nav-link"
+              >Register</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              *ngIf="authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/{{
+                this.authenticationService.getUser()
+              }}/home"
+              class="nav-link"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              *ngIf="authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/{{
+                this.authenticationService.getUser()
+              }}/all"
+              class="nav-link"
+              >Tweets</a
+            >
+          </li>
+          <li class="nav-iyem">
+            <a
+              *ngIf="authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/{{
+                this.authenticationService.getUser()
+              }}/users/all"
+              class="nav-link"
+              >All Users</a
+            >
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+          <li>
+            <a
+              *ngIf="authenticationService.isUserLoggedIn()"
+              routerLink="/tweets/logout"
+              class="nav-link"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>

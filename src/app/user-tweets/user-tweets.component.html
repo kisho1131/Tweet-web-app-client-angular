@@ -1,0 +1,88 @@
+<!-- <h1>@{{user.loginId}}</h1> <small class="text-muted sm"> {{user.firstName}} {{user.lastName}}</small>
+
+<div class="container tweet">
+    <div *ngIf='tweetsToShow' class="alert alert-warning">
+        {{tweetsToShow}}
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tweet of tweets">
+            <h5 class="semibold ellipsis nm">@{{tweet.loginId}}</h5>
+            <p class="nm">@{{tweet.loginId}}</p>
+            <div class="button">
+                <button (click)="updateLikes(tweet.id)"><i class="material-icons">thumb_up</i><small
+                        class="badge badge-primary badge-pill" *ngFor="let l of likes">
+                        <ng-container *ngIf="(tweet.id === l.id) && (l.likes!=0)">{{l.likes}}</ng-container>
+                    </small></button>
+                <button (click)="checkComments(tweet.id)"><i class="material-icons">comment</i></button>
+            </div>
+            <small class="text-muted">{{tweet.date | date : 'dd MMM yyyy, h:mm a'}}</small>
+        </li>
+    </ul>
+</div> -->
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="container">
+  <div class="col-lg-8">
+    <div class="panel">
+      <div class="panel-content panel-activity">
+        <b
+          ><h1><i class="fa fa-twitter" aria-hidden="true"></i></h1>
+          <h3>Tweet's by @{{ user.loginId }}</h3></b
+        >
+        <div *ngIf="tweetsToShow" class="alert alert-warning">
+          {{ tweetsToShow }}
+        </div>
+
+        <ul class="panel-activity__list">
+          <li *ngFor="let tweet of tweets">
+            <i class="activity__list__icon fa fa-question-circle-o"></i>
+            <div class="activity__list__header">
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                alt=""
+              />
+              <a href="#">@{{ tweet.loginId }}</a>
+            </div>
+            <div class="activity__list__body entry-content">
+              <p>
+                <strong>{{ tweet.tweets }}</strong>
+              </p>
+            </div>
+            <div class="activity__list__footer">
+              <button
+                type="button"
+                style="margin-left: 5px"
+                class="btn-link btn-primary btn-sm"
+                (click)="updateLikes(tweet.id)"
+              >
+                <i class="fa fa-thumbs-up"></i
+                ><small
+                  class="badge badge-primary badge-pill"
+                  *ngFor="let l of likes"
+                >
+                  <ng-container *ngIf="tweet.id === l.id && l.likes != 0">{{
+                    l.likes
+                  }}</ng-container>
+                </small>
+              </button>
+              <button
+                type="button"
+                style="margin-left: 5px"
+                class="btn-link btn-primary btn-sm"
+                (click)="checkComments(tweet.id)"
+              >
+                <i class="fa fa-comments"></i>
+              </button>
+              <span>
+                <i class="fa fa-clock"></i
+                >{{ tweet.date | date: "dd MMM yyyy, h:mm a" }}</span
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
