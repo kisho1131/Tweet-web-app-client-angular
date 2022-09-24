@@ -1,6 +1,20 @@
 # Tweet-web-app-client-angular
 
-Frontend for Tweet application
+Frontend for Tweet application which uses 
+
+![image](https://user-images.githubusercontent.com/63787026/192088468-d7d11746-4d7b-4111-a051-62f0fbd61863.png)
+<br>
+![image](https://user-images.githubusercontent.com/63787026/192088544-597221ca-a2e7-495f-aee3-94a04f59923e.png)
+<br>
+![image](https://user-images.githubusercontent.com/63787026/192088564-13149387-a726-438d-814a-07e9a1c38dc6.png)
+<br>
+![image](https://user-images.githubusercontent.com/63787026/192088572-40af9021-3dcb-4ea5-99d7-cf56849b4a73.png)
+<br>
+![image](https://user-images.githubusercontent.com/63787026/192088584-08ee63cf-0faa-4d99-8973-a685cc67978d.png)
+<br>
+![image](https://user-images.githubusercontent.com/63787026/192088590-ae6dc3cb-524b-488f-b4d0-1354bcd29fbb.png)
+<br>
+
 
 # Dockerize an Angular Application with Nginx
 
